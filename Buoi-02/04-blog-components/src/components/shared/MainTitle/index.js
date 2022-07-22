@@ -13,7 +13,8 @@ function MainTitle({ children, btnLabel, btnProps }) {
       <h2>{children}</h2>
       {btnLabel && <Button {...btnProps}>{btnLabel}</Button>}
     </div>
-  );
+  )
+
 }
 
 export default MainTitle;
