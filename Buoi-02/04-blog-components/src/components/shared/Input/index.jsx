@@ -1,9 +1,9 @@
 import React from 'react';
 import { useRef } from 'react';
 
-const Input = ({cls,labelText,icon, iconPos="right", ...restParams}) => {
+const Input = ({cls,labelText,icon, ...restParams}) => {
     const val = useRef('');
-    const i = <i className={icon}></i>;
+    const i = icon ? <i className={icon}></i>:'';
     return (
         <div className={cls}>
             {labelText && <label>{labelText}</label>}
