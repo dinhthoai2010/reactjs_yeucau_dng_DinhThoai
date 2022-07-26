@@ -13,10 +13,9 @@ const Form = () => {
                     <div className="form-login-register">
                     <form>
                        
-                        <Input  cls="header-search" type="text" className="header-search__input" icon="fa-regular fa-magnifying-glass" iconPos="left"  placeholder="Search articles here ..." name="query" aria-label="Search"/>
+                        <Input  cls="header-search" type="text" className="header-search__input" icon="ion-ios-search-strong" iconPos="left"  placeholder="Search articles here ..." name="query" aria-label="Search"/>
                         <Input  cls="form-control" type="text" labelText="Username" placeholder="Enter Username ..." />
                         <Input  cls="form-control" type="password" labelText="Password" placeholder="Enter Password ....." icon="toggle-password ion-eye">
-
                         </Input>
 
                         <div className="d-flex tcl-jc-between tcl-ais-center">
