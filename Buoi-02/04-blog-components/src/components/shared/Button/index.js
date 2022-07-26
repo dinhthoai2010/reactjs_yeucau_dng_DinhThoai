@@ -17,7 +17,7 @@ function Button({ type, size, children, className, loading, loadingPos = 'left',
   const contents = (
     <>
       {loading && loadingPos === 'left' && <IconLoading />}
-      {children}
+        {children}
       {loading && loadingPos ==='right' && <IconLoading />}
     </>
   )
