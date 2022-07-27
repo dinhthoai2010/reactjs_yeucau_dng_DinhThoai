@@ -70,14 +70,12 @@ function renderDom () {
     $('.budget__income--value').innerHTML = formatvnd(total)
     $('.budget__expenses--value').innerHTML = formatvnd(totalexp)
 
-    const htmlint = inc.map((e) =>toHtml(e).join('')
-    )
+    const htmlint = inc.map((e) =>toHtml(e)).join('')
 
     $('.income__list').innerHTML = htmlint;
 
 
-    const htmlexp = exp.map((e) =>toHtml(e).join('')
-    )
+    const htmlexp = exp.map((e) =>toHtml(e)).join('')
 
     $('.expenses__list').innerHTML = htmlexp;
 
