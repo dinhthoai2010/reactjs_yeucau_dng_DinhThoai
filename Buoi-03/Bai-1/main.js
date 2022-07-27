@@ -70,44 +70,31 @@ function renderDom () {
     $('.budget__income--value').innerHTML = formatvnd(total)
     $('.budget__expenses--value').innerHTML = formatvnd(totalexp)
 
-    const htmlint = inc.map((e) => `
-        <div class="item clearfix">
-            <div class="item__description">${e.description}</div>
-            <div class="right clearfix">
-              <div class="item__value">${e.amount}</div>
-              <div class="item__delete">
-                <button class="item__delete--btn">
-                  <i class="ion-ios-close-outline"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-    `
+    const htmlint = inc.map((e) =>toHtml(e)
     )
 
     $('.income__list').innerHTML = htmlint;
 
 
-    const htmlexp = exp.map((e) =>`
-        <div class="item clearfix">
-            <div class="item__description">${e.description}</div>
-            <div class="right clearfix">
-            <div class="item__value">${e.amount}</div>
-            <div class="item__percentage">${Math.round(e.amount/total*100)}%</div>
-            <div class="item__delete">
-                <button class="item__delete--btn">
-                <i class="ion-ios-close-outline"></i></button>
-            </div>
-            </div>
-        </div>
-    
-        `
+    const htmlexp = exp.map((e) =>toHtml(e)
     )
 
     $('.expenses__list').innerHTML = htmlexp;
 
 }
-
+function toHtml (e) {
+    return `<div class="item clearfix">
+    <div class="item__description">${e.description}</div>
+    <div class="right clearfix">
+    <div class="item__value">${e.amount}</div>
+    <div class="item__percentage">${Math.round(e.amount/total*100)}%</div>
+    <div class="item__delete">
+        <button class="item__delete--btn">
+        <i class="ion-ios-close-outline"></i></button>
+    </div>
+    </div>
+</div>`
+}
 
 setTimeout(() => {
     returnList();
