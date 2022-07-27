@@ -15,7 +15,14 @@ function ArticlePopular({post}) {
           <div className="popular-news__list--left">
             <div className="popular-news__list--row">
               <div className="popular-news__list--card">
-                <ArticleItem className="style-card" show_desc={true} show_cat={true} clsImg="article-item__thumbnail" post={post}  author={true}/>
+                <ArticleItem
+                  className="style-card"
+                  show_desc={true}
+                  show_cat={true}
+                  clsImg="article-item__thumbnail"
+                  post={post}
+                  author={true}
+                />
               </div>
               <div className="popular-news__list--card">
                 <ArticleItem className="style-card" show_desc={true} show_cat={true} clsImg="article-item__thumbnail" post={post}  author={true}/>
