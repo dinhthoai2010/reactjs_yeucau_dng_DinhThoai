@@ -70,13 +70,13 @@ function renderDom () {
     $('.budget__income--value').innerHTML = formatvnd(total)
     $('.budget__expenses--value').innerHTML = formatvnd(totalexp)
 
-    const htmlint = inc.map((e) =>toHtml(e)
+    const htmlint = inc.map((e) =>toHtml(e).join('')
     )
 
     $('.income__list').innerHTML = htmlint;
 
 
-    const htmlexp = exp.map((e) =>toHtml(e)
+    const htmlexp = exp.map((e) =>toHtml(e).join('')
     )
 
     $('.expenses__list').innerHTML = htmlexp;
@@ -86,7 +86,7 @@ function toHtml (e) {
     return `<div class="item clearfix">
     <div class="item__description">${e.description}</div>
     <div class="right clearfix">
-    <div class="item__value">${e.amount}</div>
+    <div class="item__value">${formatvnd(e.amount)}</div>
     <div class="item__percentage">${Math.round(e.amount/total*100)}%</div>
     <div class="item__delete">
         <button class="item__delete--btn">
