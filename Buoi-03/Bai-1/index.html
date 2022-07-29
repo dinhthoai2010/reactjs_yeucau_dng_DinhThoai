@@ -45,8 +45,8 @@
     <div class="add">
       <div class="add__container">
         <select class="add__type">
-          <option value="inc" selected>+</option>
-          <option value="exp">-</option>
+          <option value="1" selected>+</option>
+          <option value="-1">-</option>
         </select>
         <input type="text" class="add__description" placeholder="Add description">
         <input type="number" class="add__value" placeholder="Value">
@@ -54,80 +54,16 @@
       </div>
     </div>
 
-    <!-- Trường hợp chọn dấu - -->
-    <!-- <div class="add">
-      <div class="add__container">
-        <select class="add__type red-focus">
-          <option value="inc">+</option>
-          <option value="exp" selected>-</option>
-        </select>
-        <input type="text" class="add__description red-focus" placeholder="Add description">
-        <input type="number" class="add__value red-focus" placeholder="Value">
-        <button class="add__btn red"><i class="ion-ios-checkmark-outline"></i></button>
-      </div>
-    </div> -->
-
-    <div class="container clearfix">
+    <div class="container container11 clearfix">
       <div class="income">
         <h2 class="icome__title">Income</h2>
         <div class="income__list" id="list-incomes">
-          <div class="item clearfix">
-            <div class="item__description">Salary</div>
-            <div class="right clearfix">
-              <div class="item__value">+ 2,100.00</div>
-              <div class="item__delete">
-                <button class="item__delete--btn">
-                  <i class="ion-ios-close-outline"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="item clearfix">
-            <div class="item__description">Sold car</div>
-            <div class="right clearfix">
-              <div class="item__value">+ 1,500.00</div>
-              <div class="item__delete">
-                <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
-              </div>
-            </div>
-          </div>
-
-
         </div>
       </div>
 
-
-
       <div class="expenses">
         <h2 class="expenses__title">Expenses</h2>
-
         <div class="expenses__list" id="list-expenses">
-
-
-          <div class="item clearfix">
-            <div class="item__description">Apartment rent</div>
-            <div class="right clearfix">
-              <div class="item__value">- 900.00</div>
-              <div class="item__percentage">21%</div>
-              <div class="item__delete">
-                <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
-              </div>
-            </div>
-          </div>
-
-          <div class="item clearfix">
-            <div class="item__description">Grocery shopping</div>
-            <div class="right clearfix">
-              <div class="item__value">- 435.28</div>
-              <div class="item__percentage">10%</div>
-              <div class="item__delete">
-                <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
-              </div>
-            </div>
-          </div>
-
-
         </div>
       </div>
     </div>
