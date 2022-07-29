@@ -38,6 +38,22 @@ let listData = [
 
 const keydata = 'listdata'
 
+const addType = $('.add__type')
+const addBtn = $('.add__btn')
+const addDescription = $('.add__description')
+const addValue = $('.add__value')
+
+
+let listIncomes ;//= listData.filter(item=>item.amount > 0)
+let listExpenses;// = listData.filter(item =>item.amount<0)
+
+let totalAmountIncome ;//= calTotalAmount(listIncomes)
+let totalAmountExpense ;//= calTotalAmount(listExpenses)
+let totalAmount;// = calTotalAmount(listData);
+
+listData = getLocalStore()?getLocalStore(): listData
+
+
 function setLocalStore(data) {
   let now = new Date()
   const item = {
@@ -60,7 +76,6 @@ function getLocalStore() {
   return item.data
 }
 
-listData = getLocalStore()?getLocalStore(): listData
 
 function createUUID() {
   let dt = new Date().getTime();
@@ -71,14 +86,6 @@ function createUUID() {
   });
   return uuid;
 }
-
-
-let listIncomes ;//= listData.filter(item=>item.amount > 0)
-let listExpenses;// = listData.filter(item =>item.amount<0)
-
-let totalAmountIncome ;//= calTotalAmount(listIncomes)
-let totalAmountExpense ;//= calTotalAmount(listExpenses)
-let totalAmount;// = calTotalAmount(listData);
 
 function calTotalAmount (listData) {
   let total = 0;
@@ -144,14 +151,6 @@ function renderHtml (item) {
 
 renderDom();
 
-
-
-const addType = $('.add__type')
-const addBtn = $('.add__btn')
-const addDescription = $('.add__description')
-const addValue = $('.add__value')
-// const itemDelete = $$('.item__delete--btn')
-
 addType.onchange = function (e) {
   let k = this.value;
   $$('.add__container > *').forEach(item =>{
@@ -165,25 +164,34 @@ addType.onchange = function (e) {
   else $('.add__btn').classList.add('red')
 }
 
-addBtn.onclick = function () {
+addBtn.onclick = addAmountF
+
+addValue.onkeydown = function(e) {
+  var keycode = (e.keyCode ? e.keyCode : e.which);
+  if (keycode == '13') {
+    addAmountF()
+  }
+}
+
+function addAmountF () {
   const dau = addType.value;
   let des = addDescription.value;
   let value = addValue.value;
-if(des=='') {
-  console.log('can nhap thong tin')
-  addDescription.classList.add('red-focus')
-  addDescription.focus()
+  if(des==='') {
+    console.log('can nhap thong tin')
+    addDescription.classList.add('red-focus')
+    addDescription.focus()
 
-  return
-}
-if(value=='') {
-  console.log('can nhap gai tri')
-  addValue.classList.add('red-focus')
-  addValue.focus()
-  return
-}
+    return
+  }
+  if(value==='') {
+    console.log('can nhap gai tri')
+    addValue.classList.add('red-focus')
+    addValue.focus()
+    return
+  }
 
-  obj = {
+  let obj = {
     id: createUUID(),
     description: des,
     amount: addAmount(value,dau)
@@ -191,24 +199,27 @@ if(value=='') {
   listData.push(obj);
   renderDom();
   resetForm();
-
 }
 
 function resetForm () {
   addDescription.value ='';
-  addValue.value =0 ;
+  addDescription.focus();
+  addValue.value ='' ;
 }
 
 function addAmount (amount,dau){
  return dau * amount;
 }
 
-$('.container11').onclick = (ele)=>{
+$('.container11').onclick = clickBtnAdd
+
+function clickBtnAdd (ele){
+  console.log(ele)
   const deleteBtn = ele.target.closest('.item__delete--btn')
+  console.log(deleteBtn)
   if(deleteBtn){
     let id = deleteBtn.getAttribute('data-id');
     listData = listData.filter(item => item.id !== id)
     renderDom();
   }
-  
 }
