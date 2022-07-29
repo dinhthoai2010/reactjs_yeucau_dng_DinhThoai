@@ -144,8 +144,6 @@ function renderHtml (item) {
 
 renderDom();
 
-
-
 const addType = $('.add__type')
 const addBtn = $('.add__btn')
 const addDescription = $('.add__description')
