@@ -1,9 +1,6 @@
 import Item from "./Item";
 
 function BudgetExpenses({data,total}) {
-
-
-
   return (
     <div className="expenses">
       <h2 className="expenses__title">Expenses</h2>

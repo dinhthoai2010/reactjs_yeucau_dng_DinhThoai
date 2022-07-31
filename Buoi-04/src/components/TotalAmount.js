@@ -1,6 +1,8 @@
-function TotalAmount() {
+import { formatAmount } from "../helpers";
+
+function TotalAmount({value}) {
   return (
-    <div className="budget__value">+ 2,345.64</div>
+    <div className="budget__value">{formatAmount(value)}</div>
   );
 }
 
