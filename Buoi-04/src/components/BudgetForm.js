@@ -50,16 +50,18 @@ function BudgetForm() {
     return true
   }
 
+  let isRed =  isIncome === 'exp' ? 'red-focus' : ''
+
   return (
     <>
       <div className="add">
         <div className="add__container">
-          <select className={`add__type ${isIncome === 'exp' ? 'red-focus' : ''}`} onChange={handleChangeSelect}>
+          <select className={`add__type ${isRed}`} onChange={handleChangeSelect}>
             <option value="inc">+</option>
             <option value="exp">-</option>
           </select>
-          <input name="description" type="text" ref={description} className={`add__description ${isIncome === 'exp' ? 'red-focus' : ''}`} placeholder="Add description" />
-          <input name="value" ref={amount} type="number" className={`add__value ${isIncome === 'exp' ? 'red-focus' : ''}`} placeholder="Value" />
+          <input name="description" type="text" ref={description} className={`add__description ${isRed}`} placeholder="Add description" />
+          <input name="value" ref={amount} type="number" className={`add__value ${isRed}`} placeholder="Value" />
           <button className="add__btn" onClick={handleClickAdd}><i className={`ion-ios-checkmark-outline ${isIncome === 'exp' ? 'red' : ''}`} /></button>
         </div>
       </div>
