@@ -12,18 +12,8 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { listDataAsy } from './store/post/action';
-import { useEffect } from 'react';
-import { listDataCategoryAsy } from './store/category/action';
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(listDataAsy({ per_page: 10, page:0 }))
-    dispatch(listDataCategoryAsy({ per_page: 100 }))
-  });
 
   return (
     <BrowserRouter>

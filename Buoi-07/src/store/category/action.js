@@ -9,10 +9,11 @@ export function listDataCategoryAsy(params) {
     try {
       const response = await ServiceCategory.getList(params)
       const listCat = (response.data)
-      let data = [];
+      let data = {};
       listCat.forEach(cat => {
-        data.push(mappingCategoryData(cat))
+        data[cat.id] = (mappingCategoryData(cat))
       })
+
       console.log(data)
       dispatch({
         type: LIST_CATEGORY,

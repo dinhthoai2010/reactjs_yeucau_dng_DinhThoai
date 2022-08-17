@@ -25,7 +25,7 @@ export default function ArticleItem({
     <article className={classes}>
       <ArticleItemThumb link={link} img={post.thumbnail} />
       <div className="article-item__content">
-        {isShowCategoies && <ArticleItemCategories />}
+        {isShowCategoies && <ArticleItemCategories categoriesId={post.categories} />}
         {isShowCategoies && <ArticleItemStats />}
         <ArticleItemTitle title={post.title} url={link} />
         {isShowDesc && <ArticleItemDesc desc={post.excerpt} />}

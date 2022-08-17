@@ -20,7 +20,6 @@ export function mappingPostData(post) {
 
 export function mappingCategoryData(category) {
   return {
-    id: category.id,
     count: category.count,
     description: category.description,
     name: category.name,
@@ -31,13 +30,10 @@ export function mappingCategoryData(category) {
 
 export function getPost(posts, number, offset = 0) {
   let data = []
+  if(!posts) return null
   let num = number + offset > posts.length ? posts.length : number + offset;
   for (let i = offset; i < num; i++) {
     data.push(posts[i])
   }
   return data;
 }
-
-// export function listCategory(listCat){
-//   return listCat.reduce(item=>item.id==listCat)
-// }
