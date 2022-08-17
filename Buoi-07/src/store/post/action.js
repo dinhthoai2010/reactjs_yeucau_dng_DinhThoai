@@ -28,6 +28,7 @@ export function listLatest(params) {
 
 export function listGeneral (params) {
   return async dispatch => {
+    console.log(params)
     try {
       const response = await ServicePost.getList(params)
       const listPost = (response.data)

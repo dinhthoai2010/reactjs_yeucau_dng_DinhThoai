@@ -7,9 +7,6 @@ function ArticleLatest() {
 
   const state = useSelector(state => state);
   let listPost = state.Post.listLatest
-  let data = state.Post;
-  console.log(data)
-
   return (
     <div className="latest-news section">
       <div className="tcl-container">

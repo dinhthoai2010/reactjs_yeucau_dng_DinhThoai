@@ -13,16 +13,17 @@ function reducer(postState = intPost, action) {
         ...postState,
         listLatest: action.payload.data
       }
-    case LIST_POST_GENERAL:
+    case LIST_POST_POPULAR:
       return {
         ...postState,
         listPopular: action.payload.data
       }
-
-    case LIST_POST_POPULAR:
+      
+    case LIST_POST_GENERAL:
+      let data =  [...postState.listGeneral ,...action.payload.data]
       return {
         ...postState,
-        listGeneral: action.payload.data
+        listGeneral:data
       }
     default:
       return postState

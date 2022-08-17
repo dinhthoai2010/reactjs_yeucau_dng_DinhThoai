@@ -2,21 +2,21 @@ import ArticleItem from "../ArticleItem";
 import Button from "../shared/Button";
 import MainTitle from "../shared/MainTitle";
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from "react";
-import { getPost } from "../../helpers";
+import { listGeneral } from "../../store/post/action";
 
 
 function ArticleGeneral() {
-  const [numLoad, setNumLoad] = useState(0);
+  const [numLoad, setNumLoad] = useState(2);
 
   const state = useSelector(state => state);                                            
   let listPost = state.Post.listGeneral
-  
+  const disPatch = useDispatch();
 
   function handleLoadMore() {
-     setNumLoad(numLoad+4)
-    //  posts1 = getPost(listPost, 4,numLoad)
+     setNumLoad(numLoad+1)
+     disPatch(listGeneral({ per_page: 4, page:numLoad }))
   }
 
 
