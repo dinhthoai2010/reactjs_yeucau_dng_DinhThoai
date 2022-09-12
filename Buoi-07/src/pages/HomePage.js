@@ -13,8 +13,8 @@ function HomePage() {
 
   useEffect(() => {
     dispatch(listLatest({ per_page: 3, page:0 }))
-    dispatch(listGeneral({ per_page: 3, page:0 }))
-    dispatch(listPopular({ per_page: 4, page:0 }))
+    dispatch(listGeneral({ per_page: 4, page:0 }))
+    dispatch(listPopular({ per_page: 3, page:0 }))
 
     dispatch(listDataCategoryAsy({ per_page: 100 }))
   });
