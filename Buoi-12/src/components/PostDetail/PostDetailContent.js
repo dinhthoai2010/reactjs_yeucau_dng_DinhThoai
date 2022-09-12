@@ -3,21 +3,21 @@ import PostDetailComments from "./PostDetailComments"
 import PostDetailRichText from "./PostDetailRichText"
 import PostDetailTags from "./PostDetailTags"
 
-function PostDetailContent( {post}) {
-  console.log(post)
+function PostDetailContent(post) {
+ 
+  if(post===undefined) return null;
+ 
   return (
     <div className="post-detail__content">
-      <PostDetailComments />
-
       <div className="thumbnail">
-        <img src={post.image} alt="blog-title" />
+        <img src={post.thumbnail} alt={post.title} />
       </div>
       <div className="content-padding">
+        <PostDetailRichText content={post.contentHTML} />
 
-        <PostDetailRichText content={post.content}/>
+        <PostDetailTags />
 
-        <PostDetailTags tags={post.tags} />
-        
+        <PostDetailComments />
       </div>
     </div>
   )

@@ -34,7 +34,6 @@ console.log(listTags)
 
   useEffect(() => {
     dispatch(actFetchListPostAsync(params)).then(post => {
-      console.log(post)
       setPost(post)
       setPage(page+1)
     })
