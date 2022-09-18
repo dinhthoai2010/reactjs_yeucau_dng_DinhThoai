@@ -75,12 +75,7 @@ const HomePage = () => {
 
 			</div>
 		</div>
-
 		    <div className="spacing"></div>
-
-            {/* <ArticleLatest post={data} />
-            <ArticleItem post={data}/>
-            <ArticlePopular post={data}/> */}
             <Footer />
         </div>
     );
